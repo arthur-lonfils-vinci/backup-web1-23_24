@@ -25,21 +25,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install --production
+        npm install
         npm audit fix || echo "npm audit fix encountered issues, continuing workflow..."
         npm audit fix --force || echo "npm audit fix --force encountered issues, continuing workflow..."
       
     - name: Build application
       run: |
         npm run build --if-present
-
-    - name: Prepare deployment files
-      run: |
-        mkdir -p dist
-        # Adjust these paths to match your project structure
-        if [ -d "public" ]; then cp -R public dist/; fi
-        if [ -d "src" ]; then cp -R src dist/; fi
-        cp package.json package-lock.json dist/
 
     - name: Archive files for deployment
       run: zip -r node-app.zip ./dist
