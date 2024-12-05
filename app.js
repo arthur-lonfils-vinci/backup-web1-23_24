@@ -43,7 +43,7 @@ const membersRouter = require('./routes/members.js');
 const adminRouter = require('./routes/admin.js');
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Setup views folder and handlebar engine
 app.set('views', path.join(__dirname, 'views'));
