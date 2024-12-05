@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "eslint --rulesdir ./tests .",
-    "build": "rimraf dist && mkdir dist && copyfiles \"**/*\" \"!node_modules/**\" dist"
+    "build": "rimraf dist && mkdir dist && copyfiles \"**/*\" dist"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
