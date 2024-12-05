@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
 
@@ -37,7 +37,7 @@ jobs:
       run: zip -r node-app.zip ./dist
 
     - name: Upload artifact for deployment
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: node-app
         path: node-app.zip
